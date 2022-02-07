@@ -1,3 +1,5 @@
+let playerScore = 0;
+let computerScore = 0;
 const choices = ["rock", "paper", "scissors"];
 function computerPlay() {
   const randomChoice = choices[Math.floor(Math.random() * 3)];
@@ -30,14 +32,23 @@ function playRound() {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     console.log("You've won the round");
+    playerScore++;
   } else if (playerSelection === computerSelection) {
     console.log("It's a tie");
   } else {
     console.log("You've lost the round");
+    computerScore++;
   }
 }
 
 for (let i = 0; i < 5; i++) {
   playRound();
   console.log(`You: ${playerSelection} , computer: ${computerSelection}`);
+}
+if (playerScore > computerScore) {
+  console.log(`You won the game by ${playerScore} to ${computerScore}`);
+} else if ((playerScore = computerScore)) {
+  console.log(`The game is a tie by ${playerScore} to ${computerScore}`);
+} else {
+  console.log(`You lost the game by ${computerScore} to ${playerScore}`);
 }
