@@ -1,5 +1,5 @@
-playerScore = 0;
-computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 const choices = ["rock", "paper", "scissors"];
 function computerPlay() {
   return choices[Math.floor(Math.random() * 3)];
