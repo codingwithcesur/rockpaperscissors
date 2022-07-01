@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica, sans-serif;
+  width: auto;
+  height: 550px;
+}
+.btn-container {
+  display: flex;
+  height: auto;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 110px 20px 110px;
+  background-color: rgba(48, 38, 184, 0.685);
+}
+.btn {
+  font-weight: 700;
+  flex: 1;
+  font-size: 15px;
+  background-color: rgba(230, 212, 212, 0.719);
+  font-family: "Courier New", monospace;
+  height: 65px;
+  width: 200px;
+  margin: 20px 60px 20px 60px;
+  border: 3px solid rgb(207, 54, 54);
+  border-radius: 18px;
+}
+.results {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 110px 60px 110px;
+  background-color: rgba(86, 158, 136, 0.603);
+  color: rgba(12, 9, 9, 0.925);
+  height: auto;
+}
+.current-score {
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 40px;
+}
+.round-winner {
+  font-size: 21px;
+  margin-top: 28px;
+}
+.final-result {
+  text-align: center;
+  justify-self: center;
+  font-size: 38px;
+  font-weight: 600;
+  margin-top: 20px;
+}

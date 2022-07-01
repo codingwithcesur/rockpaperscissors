@@ -13,9 +13,13 @@ function addResetBtn() {
     finalResult.textContent = "";
     currentScore.textContent = "Player 0 Computer 0";
     roundWinner.textContent = "";
+    resetBtn.classList.toggle("btn");
     btnContainer.removeChild(resetBtn);
   }
+  currentScore.textContent = "";
+  roundWinner.textContent = "";
   const resetBtn = document.createElement("button");
+  resetBtn.classList.toggle("btn");
   resetBtn.textContent = "Reset";
   btnContainer.appendChild(resetBtn);
   resetBtn.addEventListener("click", resetBtnOpt);
