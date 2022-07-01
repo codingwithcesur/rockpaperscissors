@@ -2,9 +2,7 @@ function startGame() {
   startBtn.classList.remove("btn");
   startBtn.setAttribute("id", "start-btn-inv");
   btnContainer.style.display = "flex";
-  for (const button of btn1) {
-    button.classList.toggle("btnInvisible");
-  }
+  toggleBtnInv();
 }
 let currentScore = document.querySelector(".current-score");
 let roundWinner = document.querySelector(".round-winner");
@@ -16,9 +14,12 @@ const btn1 = document.querySelectorAll(".btn");
 let playerScore = 0;
 let computerScore = 0;
 btnContainer.style.display = "block";
-for (const button of btn1) {
-  button.classList.toggle("btnInvisible");
+function toggleBtnInv() {
+  for (const button of btn1) {
+    button.classList.toggle("btnInvisible");
+  }
 }
+toggleBtnInv();
 startBtn.addEventListener("click", startGame);
 const choices = ["rock", "paper", "scissors"];
 function addResetBtn() {
@@ -31,15 +32,12 @@ function addResetBtn() {
     resetBtn.classList.toggle("btn");
     startBtn.classList.add("btn");
     startBtn.setAttribute("id", "start-btn");
-    btnContainer.style.display = "block";
-    for (const button of btn1) {
-      button.classList.toggle("btnInvisible");
-    }
     btnContainer.removeChild(resetBtn);
   }
   currentScore.textContent = "";
   roundWinner.textContent = "";
   const resetBtn = document.createElement("button");
+  resetBtn.setAttribute("id", "reset-btn");
   resetBtn.classList.toggle("btn");
   resetBtn.textContent = "Reset";
   btnContainer.appendChild(resetBtn);
@@ -54,9 +52,13 @@ btn.forEach((btn) => {
     }
     if (playerScore === 5) {
       finalResult.textContent = `You've won the game by ${playerScore} to ${computerScore}`;
+      btnContainer.style.display = "block";
+      toggleBtnInv();
       addResetBtn();
     } else if (computerScore === 5) {
       finalResult.textContent = `Computer won the game by ${computerScore} to ${playerScore}`;
+      btnContainer.style.display = "block";
+      toggleBtnInv();
       addResetBtn();
     }
   });

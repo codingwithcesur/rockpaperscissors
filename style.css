@@ -64,3 +64,13 @@ body {
 #start-btn-inv {
   display: none;
 }
+#reset-btn {
+  display: block;
+  margin: 40px auto auto auto;
+  height: 100px;
+  width: 320px;
+  font-size: 35px;
+}
+#reset-btn-inv {
+  display: none;
+}
